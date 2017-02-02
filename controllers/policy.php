@@ -1,7 +1,7 @@
 <?php
 
 /**
- * RStudio Server controller.
+ * RStudio Server policy controller.
  *
  * @category   apps
  * @package    rstudio
@@ -30,11 +30,24 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
+// B O O T S T R A P
+///////////////////////////////////////////////////////////////////////////////
+
+$bootstrap = getenv('CLEAROS_BOOTSTRAP') ? getenv('CLEAROS_BOOTSTRAP') : '/usr/clearos/framework/shared';
+require_once $bootstrap . '/bootstrap.php';
+
+///////////////////////////////////////////////////////////////////////////////
+// D E P E N D E N C I E S
+///////////////////////////////////////////////////////////////////////////////
+
+require clearos_app_base('groups') . '/controllers/groups.php';
+
+///////////////////////////////////////////////////////////////////////////////
 // C L A S S
 ///////////////////////////////////////////////////////////////////////////////
 
 /**
- * RStudio Server controller.
+ * RStudio Server policy controller.
  *
  * @category   apps
  * @package    rstudio
@@ -45,26 +58,14 @@
  * @link       https://www.egloo.ca
  */
 
-class RStudio extends ClearOS_Controller
+class Policy extends Groups
 {
     /**
-     * RStudio server default controller.
-     *
-     * @return view
+     * RStudio Server policy constructor.
      */
 
-    function index()
+    function __construct()
     {
-        // Load dependencies
-        //------------------
-
-        $this->lang->load('rstudio');
-
-        // Load views
-        //-----------
-
-        $views = array('rstudio/server', 'rstudio/settings', 'rstudio/policy');
-
-        $this->page->view_forms($views, lang('rstudio_app_name'));
+        parent::__construct('rstudio', array('rstudio_plugin'));
     }
 }
