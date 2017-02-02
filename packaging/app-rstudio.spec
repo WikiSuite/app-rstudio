@@ -24,6 +24,7 @@ Requires: app-base-core
 Requires: app-rstudio-plugin-core
 Requires: rstudio-server
 Requires: java
+Requires: R
 
 %description core
 RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.

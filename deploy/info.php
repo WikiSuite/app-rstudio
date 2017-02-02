@@ -37,6 +37,7 @@ $app['core_requires'] = array(
     'app-rstudio-plugin-core',
     'rstudio-server',
     'java',
+    'R'
 );
 
 $app['core_directory_manifest'] = array(
