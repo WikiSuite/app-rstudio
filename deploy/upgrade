@@ -1,0 +1,13 @@
+#!/bin/sh
+
+TIMESTAMP=`date "+%b-%d-%Y-%T"`
+
+# PAM check
+#----------
+
+CHECK=`grep clearos/rstudio.d /etc/pam.d/rstudio`
+if [ -z "$CHECK" ]; then
+    logger -p local6.notice -t installer "app-rstudio-core - applying PAM configuration"
+    [ -e /etc/pam.d/rstudio ] && cp /etc/pam.d/rstudio /var/clearos/rstudio/backup/rstudio.pam.$TIMESTAMP
+    cp /usr/clearos/apps/rstudio/deploy/rstudio.pam /etc/pam.d/rstudio
+fi

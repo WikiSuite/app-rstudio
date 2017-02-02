@@ -1,0 +1,8 @@
+#%PAM-1.0
+session    optional     pam_keyinit.so force revoke
+auth       required     pam_nologin.so
+auth       include      password-auth
+account    required     pam_listfile.so item=group sense=allow file=/etc/clearos/rstudio.d/authorize onerr=fail
+account    include      password-auth
+session    required     pam_loginuid.so
+session    include      password-auth

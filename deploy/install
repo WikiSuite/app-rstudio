@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Onboot settings
+#----------------
+
+systemctl enable rstudio-server.service >/dev/null 2>&1
+systemctl start rstudio-server.service >/dev/null 2>&1
