@@ -50,7 +50,7 @@ echo "</div>";
 echo "<div id='rstudio_running' style='display:none;'>";
 
 $options['buttons']  = array(
-    anchor_custom('http://' . $_SERVER['SERVER_ADDR'] . ':8787', lang('rstudio_go_to_management_tool'), 'high', array('target' => '_blank'))
+    anchor_custom('https://' . $_SERVER['SERVER_ADDR'] . ':81/rstudio/', lang('rstudio_go_to_management_tool'), 'high', array('target' => '_blank'))
 );
 
 echo infobox_highlight(

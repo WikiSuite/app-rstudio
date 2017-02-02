@@ -35,6 +35,7 @@ $app['controllers']['policy']['title'] = lang('base_app_policy');
 
 $app['core_requires'] = array(
     'app-rstudio-plugin-core',
+    'app-accounts-core',
     'rstudio-server',
     'java',
     'R'
@@ -48,6 +49,7 @@ $app['core_directory_manifest'] = array(
 
 $app['core_file_manifest'] = array(
     'rstudio-server.php'=> array('target' => '/var/clearos/base/daemon/rstudio-server.php'),
+    'rstudio.conf' => array('target' => '/usr/clearos/sandbox/etc/httpd/conf.d/rstudio.conf'),
     'authorize' => array(
         'target' => '/etc/clearos/rstudio.d/authorize',
         'mode' => '0644',

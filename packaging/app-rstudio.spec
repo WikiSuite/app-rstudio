@@ -22,6 +22,7 @@ License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
 Requires: app-rstudio-plugin-core
+Requires: app-accounts-core
 Requires: rstudio-server
 Requires: java
 Requires: R
@@ -44,6 +45,7 @@ install -d -m 0755 %{buildroot}/var/clearos/rstudio
 install -d -m 0755 %{buildroot}/var/clearos/rstudio/backup
 install -D -m 0644 packaging/authorize %{buildroot}/etc/clearos/rstudio.d/authorize
 install -D -m 0644 packaging/rstudio-server.php %{buildroot}/var/clearos/base/daemon/rstudio-server.php
+install -D -m 0644 packaging/rstudio.conf %{buildroot}/usr/clearos/sandbox/etc/httpd/conf.d/rstudio.conf
 
 %post
 logger -p local6.notice -t installer 'app-rstudio - installing'
@@ -89,3 +91,4 @@ exit 0
 /usr/clearos/apps/rstudio/language
 %config(noreplace) /etc/clearos/rstudio.d/authorize
 /var/clearos/base/daemon/rstudio-server.php
+/usr/clearos/sandbox/etc/httpd/conf.d/rstudio.conf
