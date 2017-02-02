@@ -34,6 +34,7 @@ $app['controllers']['policy']['title'] = lang('base_app_policy');
 /////////////////////////////////////////////////////////////////////////////
 
 $app['core_requires'] = array(
+    'app-rstudio-plugin-core',
     'rstudio-server',
     'java',
 );
@@ -58,5 +59,6 @@ $app['core_file_manifest'] = array(
 
 $app['delete_dependency'] = array(
     'app-rstudio-core',
+    'app-rstudio-plugin-core',
     'rstudio',
 );

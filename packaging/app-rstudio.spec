@@ -21,6 +21,7 @@ Summary: RStudio Server - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
+Requires: app-rstudio-plugin-core
 Requires: rstudio-server
 Requires: java
 
@@ -85,6 +86,5 @@ exit 0
 %dir /var/clearos/rstudio/backup
 /usr/clearos/apps/rstudio/deploy
 /usr/clearos/apps/rstudio/language
-/usr/clearos/apps/rstudio/libraries
 %config(noreplace) /etc/clearos/rstudio.d/authorize
 /var/clearos/base/daemon/rstudio-server.php
