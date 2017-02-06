@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'rstudio';
-$app['version'] = '1.0.0';
+$app['version'] = '1.0.1';
 $app['release'] = '1';
 $app['vendor'] = 'Marc Laporte';
 $app['packager'] = 'eGloo';
@@ -33,12 +33,16 @@ $app['controllers']['policy']['title'] = lang('base_app_policy');
 // Packaging
 /////////////////////////////////////////////////////////////////////////////
 
+// Note: *-devel dependencies are for building "plotly" via the
+// RStudio plugin system.
 $app['core_requires'] = array(
     'app-rstudio-plugin-core',
     'app-accounts-core',
     'rstudio-server',
     'java',
-    'R'
+    'R',
+    'openssl-devel',
+    'libcurl-devel',
 );
 
 $app['core_directory_manifest'] = array(

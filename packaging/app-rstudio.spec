@@ -1,7 +1,7 @@
 
 Name: app-rstudio
 Epoch: 1
-Version: 1.0.0
+Version: 1.0.1
 Release: 1%{dist}
 Summary: RStudio Server
 License: GPLv3
@@ -26,6 +26,8 @@ Requires: app-accounts-core
 Requires: rstudio-server
 Requires: java
 Requires: R
+Requires: openssl-devel
+Requires: libcurl-devel
 
 %description core
 RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.
