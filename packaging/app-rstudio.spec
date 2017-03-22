@@ -1,13 +1,13 @@
 
 Name: app-rstudio
 Epoch: 1
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{dist}
 Summary: RStudio Server
 License: GPLv3
 Group: ClearOS/Apps
 Packager: eGloo
-Vendor: Marc Laporte
+Vendor: WikiSuite
 Source: %{name}-%{version}.tar.gz
 Buildarch: noarch
 Requires: %{name}-core = 1:%{version}-%{release}
@@ -85,6 +85,7 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/rstudio/packaging
+%exclude /usr/clearos/apps/rstudio/unify.json
 %dir /usr/clearos/apps/rstudio
 %dir /etc/clearos/rstudio.d
 %dir /var/clearos/rstudio
